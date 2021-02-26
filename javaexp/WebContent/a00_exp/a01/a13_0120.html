@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/* 
+ 
+ 
+*/
+//
+	var pname="";
+	var call1=function(){
+		for(idx in arguments){
+			pname+=arguments[idx];
+		}
+		alert(pname);
+	}
+	
+	function call2(p){
+		alert(p);
+	}
+	
+	var tot=0;
+	var no=1;
+	function call3(pname,price){
+		var show="";
+		var cnt = prompt("갯수","0");
+		tot+=Number(price)*Number(cnt);
+		show+="<tr><td>no</td><td>물건명</td><td>가격</td><td>갯수</td><td>계</td></tr>";
+		show+="<tr><td>"+no+"</td><td>"+pname+"</td><td>"+price+"</td><td>"+cnt+"</td><td>"+price*cnt+"</td></tr>";
+		document.querySelector("#table01").innerHTML+=show;
+		document.querySelector("#tot").innerHTML="총계: "+tot;
+		no++;
+	}
+	
+	function call(num,str){
+		//call(25)를 통해 넘겨온 데이터를 num이라는 변수에 할당하고 
+		//num을 다시 하단에 출력 처리한다. 
+		alert("호출된다!"+num+str);
+	}
+	// var obj = document.querySelector("h3"); 
+	// 모든 h3를 넘긴 것이 아니고, 클릭한 h3를 함수를 통해 전달 
+	function call5(obj){
+		alert(obj+": 객체 전달됨");
+		obj.innerHTML="성공 클릭하셨습니다.";
+		obj.align="center";
+		obj.style.backgroundColor="tomato";
+	}
+	
+	//입력받은 pname누적하여 처리 
+	var addPname="";
+	function prod(pname){
+		addPname+=pname+" "; 
+		alert(addPname);
+	}
+	
+	function call4(pname,price){
+		alert("물건명: "+pname+"\n가격: "+price+"원");
+	}
+	
+	// DOM객체 전체 넘겼기 때문에, 해당객체가 가지고 있는 내용을 
+	// 출력할 수 있다. 
+	function call6(obj){
+		alert(obj.innerHTML);
+	}
+</script>
+</head>
+<body>
+   <h2></h2>
+   <h3 align="center">화면에 있는 태그 내용입니다!</h3>
+   <!--  onclick="함수()" : 클릭이라는 이벤트를 처리하고 
+   			클릭이라는 이벤트에 연결된 정의 함수(이벤트핸들러)를 호출 
+   -->
+   <h3 onclick="call(25,'홍길동')">클릭해볼까요?(변수)</h3>
+   <!-- this: 클릭한 현재 객체를 전달 -->
+   <h3 onclick="call5(this)">클릭해볼까요?(h3객체)</h3>
+   
+   <h3 onclick="prod('사과')">사과</h3>
+   <h3 onclick="prod('바나나')">바나나</h3>
+   <h3 onclick="prod('딸기')">딸기</h3>
+   <h3 onclick="prod('망고')">망고</h3>
+   <h3 onclick="prod('귤')">귤</h3>
+   <!--  클릭했을때 사과가 alert로 출력되게 해보세요 -->
+   
+   
+   <table border>
+   	 <tr><td onclick="call4('사과',3000)">사과/3000원</td>
+   		<td onclick="call4('바나나',4000)">바나나/4000원</td>
+   		<td onclick="call4('딸기',15000)">딸기/15000원</td></tr>
+   	<tr><td onclick="call6(this)">수박/15000원</td>
+   		<td onclick="call6(this)">오렌지/5000원</td>
+   		<td onclick="call6(this)">키위/10000원</td></tr>
+   	<tr><td onclick="call6(this)">포도/15000원</td>
+   		<td onclick="call6(this)">단감/5000원</td>
+   		<td onclick="call6(this)">멜론/16000원</td></tr>
+  
+   </table>
+   
+   <h3 onclick="call1('바나나')">바나나</h3>
+   <h3 onclick="call1('딸기')">딸기</h3>
+   <h3 onclick="call1('사과')">사과</h3>
+   
+   
+   <table border>
+   	<tr><th>물건명</th><th>가격</th></tr>
+   	<tr><td onclick="call2('바나나')">바나나</td><td onclick="call2('3000원')">3000</td></tr>
+   </table>    
+   
+   <br><br><br><br>
+   <table id="table01" border>
+  	 <tr><td onclick="call3('사과',3000)">사과/3000원</td>
+   		<td onclick="call3('바나나',4000)">바나나/4000원</td>
+   		<td onclick="call3('딸기',15000)">딸기/15000원</td></tr>
+   	<tr><td onclick="call3('수박',15000)">수박/15000원</td>
+   		<td onclick="call3('오렌지',5000)">오렌지/5000원</td>
+   		<td onclick="call3('키위',10000)">키위/10000원</td></tr>
+   	<tr><td onclick="call3('포도',15000)">포도/15000원</td>
+   		<td onclick="call3('단감',5000)">단감/5000원</td>
+   		<td onclick="call3('멜론',16000)">멜론/16000원</td></tr>
+   </table>
+   <h3 id="tot"></h3>
+   
+   
+</body>
+<script type="text/javascript">
+/*
+ # css나 태그로 구성된 내용을 js는 각 태그들을 DOM(document object model)을 
+ 통해서 객체화하여 이벤트 등을 통하여 동적으로 변경할 수 있게 해준다. 
+ 
+ 	
+ */
+// h2태그를 선택해서 h2Obj라는 변수에 할당. 객체변수선언 
+
+var h2Obj = document.querySelector("h2");
+// 객체는 속성 
+// .innerHTML : 출력내용이 있는 부분을 태그로 랜더링해준다. 
+h2Obj.innerHTML ="js시작";
+// <h2 align="center">
+// .align="속성값": 정렬속성을 할당한다. 
+h2Obj.align="center";
+// .style.css속성="css속성값"
+h2Obj.style.backgroundColor="pink"; 
+
+
+/* 
+ 
+ [js]
+[하] 1. 익명함수와 선언적 함수의 차이점을 기술하세요.
+익명함수
+		var 함수명 = function(매개변수1, 매개변수2){
+			return 함수가호출될때 리턴값; 
+		};
+		함수 선언 후, 이후 라인에서 호출하여 사용할 수 있다. 
+		
+선언적함수 
+	함수명(전송데이터1,전송데이터2);
+	function 함수명(매개변수1,매개변수2){
+		return 리턴값; 
+	}
+	함수가 선언되기 전에 호출하여 사용할 수 있다. 
+[하] 2. h3로 구매할 3개를 물건으로 선언하고 각 h3 클릭시,
+		익명함수를 호출하여 구매할 물건을 누적시켜 alert()에 출력 처리하세요.
+*/
+	
+/* 
+[하] 4. 3X3테이블에 각각 물건명과 물건 가격이 표기되어 있고, 
+		클릭시 마다 선언적 함수를 통해 물건명을 alert()을 통해 출력하세요.
+*/
+
+/*
+[중] 5. 3X3테이블에 셀 마다 각각 물건명과 물건 가격이 표기되어 있고, 
+		클릭시 마다 선언적 함수를 통해 아래 table에 추가하여 출력하게 하세요.
+        테이블
+        no 물건명 가격 갯수 계
+        h3 총계 @@ 형식으로
+ 	
+*/
+ //  document.querySelector("h2").innerHTML="js 시작^^";
+//
+
+</script>
+
+
+
+
+
+
+
+
+
+

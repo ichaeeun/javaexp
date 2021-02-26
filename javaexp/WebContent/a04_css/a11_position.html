@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+/*
+# 위치지정 속성
+1. position의 속성을 통해서 요소객체의 위치를 상대적/절대적으로 설정할 수 있다. 
+2. 속성값
+	1) static(기본) ex) div{position:static;}
+	2) relative: 상대적 배치 - 이전 요소객체(태그)를 기준으로 위치 지정 
+	3) absolute: 절대적 배치 - 전체 화면 기준으로 위치 지정 
+	3) fixed: 고정 위치 
+	4) float: 유동 위치 
+3. 함께 사용되는 위치 속성
+	선택자{position:relative;top:20px;left:20px;}
+	1) top, bottom, left, right, height
+		left:20px; 왼쪽으로부터 20px 떨어져서 x축 위치 지정 
+		bottom:50px; 밑으로부터 50px 떨어져서 y축 위치 지정  
+		ex) div{top:20px; left:30px; position:relative;}
+			
+*/
+
+div{
+	display:inline-block;
+	height:50px;
+	width:50px;
+	border: 1px solid lightgray;
+	text-align:center;
+	background: red;
+}
+/* :hover => 가상클래스 속성으로 마우스를 위치시켰을때, 속성이 적용
+	#down:hover => id값이 down이고 마우스 커서를 위치시켰을때 처리될 내용. 
+*/
+
+#down:hover{
+	position: relative;
+	left:20px;
+	top:20px;
+	background:green;
+}
+#up:hover{
+	position:relative;
+	right:20px;
+	bottom:20px;
+	background:green;
+}
+
+#ab01:hover{
+	position:absolute;
+	left:300px;
+	top:200px;
+	background:pink;
+}
+/* 브라우저의 특정위치에 화면이 고정되어 스크롤하거나 화면의 크기를 
+	변경하더라도 해당위치가 고정되어 처리된다. 
+*/
+#fixed{
+	position: fixed;	
+	bottom: 10px;
+	right:10px;
+	width:100px;
+	padding:5px;
+	background:red;
+	color:white;
+}
+
+/* 해당 내용에 대하여 위치를 지정하여 출력하는 속성*/
+
+#float{
+	float: right; /* 뷰포트의 오른쪽에 붙여*/
+	border: 1px dotted black;
+	width: 7em; /* 7개의 글자 크기*/
+	padding: 0.25em;
+	margin: 1em;
+}
+</style>
+</head>
+<body>
+<h3>position, relative/absolute/fixed</h3>
+<hr>
+<div id="fixed">즐거운 하루입니다!</div>
+<div id="ab01">T</div>
+<div id="down">h</div>
+<div>a</div>
+<div>n</div>
+<div id="up">k</div>
+<div>s</div>
+<h3>float, right/left</h3>
+<hr>
+<p id="float">24일은 피아니스트 조성진의 크리스마스 특별 연주가 있습니다. </p>
+</body>
+</html>
+
+
+
+
+
+
+
+

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function ch(obj){
+		obj.style.visibility='hidden';
+	}
+</script>
+<style>
+/*
+# visibility
+1. 특정한 대상 요소객체의 위치 공간을 잡고, 
+	보이는 처리(default, visible),
+	보이지 않는 처리(hidden)를 할 수 있다. 
+	
+# overflow
+1. 대상객체에 포함된 컨텐츠(문자열, 요소객체-태그)가 크기가 넘칠 때, 
+	어떻게 처리하는지를 선언하는 속성
+2. 속성값
+	hidden: 넘치는 부분을 보이지 않게 처리 
+	visible: 넘치는 그대로 두기 
+	scroll: scroll bar 만들어져서 scroll로 확인할 수 있게 처리 
+	auto: 내용을 입력하는 요소객체로 입력하는 내용을 화면에 보이는 부분보다 
+			작을 때는 scroll bar가 생성되지 않다가 화면보다 내용이 커지면  
+			자동으로 scroll bar가 생성되기 할 때 사용한다. 
+*/
+span{
+	visibility:visible;
+}
+p{
+	width:15em;
+	height:3em;
+	border:1px solid lightgray;
+}
+.hidden{overflow:hidden;}
+.visible{overflow:visible;}
+.scroll{overflow:scroll;}
+
+</style>
+</head>
+<body>
+<h3>다음 빈 곳에 숨은 단어?</h3>
+<hr>
+<ul>
+	<li>I(<span onclick="ch(this)">love</span>) you.
+	<li>CSS is Cascading(<span onclick="ch(this)">Style</span>) Sheet.
+	<li>응답하라(<span onclick="ch(this)">1988</span>).
+</ul>
+<p class="hidden">overflow에 hidden값을 적용하면 박스를 넘어가는 내용이 잘려 보이지 않습니다.</p><br>
+<p class="visible">overflow에 visible값을 적용하면 컨텐츠가 박스를 넘어가도 출력됩니다.</p><br>
+<p class="scroll">overflow에 scroll값을 적용하면 박스에 스크롤바를 붙여 출력합니다.</p><br>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

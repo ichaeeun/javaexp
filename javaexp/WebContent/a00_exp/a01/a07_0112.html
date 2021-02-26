@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+h3{font:italic bold 12px consolas,sans-serif; }
+div{ border: 2px solid green;}
+#list{ width:100px; height:100px;}
+#lists{ width:100px; height:100px;}
+</style>
+</head>
+<body>
+<h3>hello</h3>
+<!-- 
+
+[html]
+[하] 1. font에 관련된 속성을 기술하고, 해당 속성에 따른 기본값을 예제를 통해 나타내세요.
+1. 폰트의 종류 font-family : 궁서체, 맑은 고딕, Arial 등. 
+		ex) h2{font-family:궁서체;}
+2. 폰트의 크기 font-size: 표준 단위로 크기를 설정 
+		ex) h1{font-size:2.0em;}
+3. 폰트의 스타일 font-style: italic, oblique..
+4. 폰트의 굵기 font-weight: bold, bolder, light.., 100~900 범위 굵기 
+5. 한번에 폰트의 속성을 지정	
+	font:font-style font-weight font-size font-family
+	ex) p{font:italic bold 20px consolas, sans-serif;}
+	ex) h4{font:20px consolas,sans-serif;} 
+		font-size, font-family 외에는 생략 가능 
+[하] 2. css의 표준 단위에 대하여 기술하세요.
+1. em: 배수 ex) 기본적으로 지원하는 크기에서 배수로 처리할 때 활용 
+			font-size: 3em; 
+2. %: 퍼센트 ex) 해당 지원하는 크기에 %로 크기 설정.
+			font-size: 200%
+3. px: 픽셀수 ex) 절대적인 픽셀단위 크기 설정. 
+4. pt: 포인트 1pt = 1in(인치)의 1/72 크기  
+5. cm|mm: ex) 절대적 cm/mm 크기로 설정 
+6. in: 인치 = 2.52cm = 96px  ex) margin:2in; 여백 2인치 
+7. pc: 피카소(picas) 1pc=12pt 
+8. deg: 각도	  ex) transform:rotate(20deg) 시계방향 20도 회전
+[하] 3. box의 기본 속성값 3개와 방향속성값과 연관관게, 
+		border속성값에서 추가되는 속성을 기술하세요.
+		margin, padding, border 
+		+  top, bottom, left, right 
+		==> div{ margin-top:10px;} 
+		border 는 방향속성값에 width,style,color 추가된다. 
+		div{ border: 1px solid yellow;}
+		div{ border-left-color:green;}
+[하] 4. border 테두리 관련 속성값을 기술하세요.
+		border-radius: 테두리 굴곡에 대한 정도 표기 
+		왼쪽상단, 오른쪽상단, 오른쪽하단, 왼쪽하단 
+		round{ border-radius: 0px 20px 40px 60px; }
+[하] 5. box관련 배경이미지 속성과 속성값을 기술하세요.
+		background-color: 배경색상 
+		background-image:url("이미지주소/파일경로명"); 
+		background-position:center center;
+			이미지의 위치를 지정(x축, y축) 중앙에 위치 
+		background-repeat:repeat-y; 
+		none : 반복하지 않음. 
+		repeat : x/y축 왼쪽/오른쪽,위/아래 반복 
+		repeat-x : x축(왼쪽에서 오른쪽으로) 반복 
+		repeat-y : y축(위에서 아래로) 반복 
+[하] 6. block, inline, inline-block의 차이점을 
+		좋아하는 과일 리스트를 div에 넣고 화면에 표시하세요.
+ -->
+ 		<div>
+ 		좋아하는 과일 리스트
+ 		나는 <div style="display:inline">사과</div>를 좋아한다. 
+ 		<div style="display:block">사과</div>
+ 		<div style="display:block">바나나</div>
+ 		<div style="display:block">딸기</div>
+ 		<br>
+ 		<div id="list" style="display:inline-block">좋아하는 과일리스트</div>
+ 		<div id="lists" style="display:inline-block">사과<br>바나나<br>귤<br>망고</div>
+ 		</div>
+ 		
+</body>
+</html>
+
+
+
+
+
+

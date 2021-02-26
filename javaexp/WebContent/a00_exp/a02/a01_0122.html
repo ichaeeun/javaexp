@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+td{text-align:center;}
+</style>
+<script type="text/javascript"> 
+/* 
+ 
+ 
+*/
+/* 문제3 */ 
+	function cal(obj){
+		var result = document.querySelector("#result");
+		result.innerHTML+= obj;
+	}
+	function calR(){
+		result.innerHTML += "= "+eval(result.innerHTML);
+	}
+	function reset(){
+		result.innerHTML="";
+	}
+</script>
+</head>
+<body>
+   <h2 > </h2>
+   <h3 onclick="dice()">주사위던지기 </h3>
+   <h3 onclick="dice2()">주사위던지기2</h3>
+   <h4></h4>
+   
+   <div id="dicedice"></div>
+   <table border width="400" height="400">
+   	 <tr><td></td><td></td><td></td><td></td><td></td></tr>
+   	 <tr><td></td><td></td><td></td><td></td><td></td></tr>
+   	 <tr><td></td><td></td><td></td><td></td><td></td></tr>
+   	 <tr><td></td><td></td><td></td><td></td><td></td></tr>
+   	 <tr><td></td><td></td><td></td><td></td><td></td></tr>
+   
+   </table>
+   
+   <!--  문제3  -->
+   <table border width="400" height="400">
+   		<col width="20%"><col width="20%"><col width="20%"><col width="20%"><col width="20%">
+   		<tr><td id="result" colspan="4"></td><td onclick="reset()">reset</td></tr>
+   		<tr><td onclick="cal(this.innerHTML)">0</td><td onclick="cal(this.innerHTML)">1</td><td onclick="cal(this.innerHTML)">2</td><td onclick="cal(this.innerHTML)">3</td><td onclick="cal(this.innerHTML)">4</td></tr>
+   		<tr><td onclick="cal(this.innerHTML)">5</td><td onclick="cal(this.innerHTML)">6</td><td onclick="cal(this.innerHTML)">7</td><td onclick="cal(this.innerHTML)">8</td><td onclick="cal(this.innerHTML)">9</td></tr>
+   		<tr><td onclick="cal(this.innerHTML)">+</td><td onclick="cal(this.innerHTML)">-</td><td onclick="cal(this.innerHTML)">*</td><td onclick="cal(this.innerHTML)">/</td><td onclick="calR()">=</td></tr>
+   </table>
+</body>
+<script type="text/javascript">
+/* 
+[js]
+[중] 1. 주사위를 던지고(숫자 text로 출력), 나온 수 만큼 말이 움직이게 처리하세요.(5X5테이블에서)
+*/
+	var dice1=0;
+	var tot2=0;
+	function dice(){
+		dice1 = parseInt(Math.random()*6+1);
+		tot2+=dice1;
+		var h2Obj = document.querySelector("h4");
+		h2Obj.innerHTML =dice1;
+		var cnt2=0;
+		var set1 = setInterval(function(){
+			tab[cnt2++].style.backgroundColor="tomato";
+			if(cnt2==tot2) {
+				clearInterval(set1);
+			}
+		},200);
+	}
+	/* var tab = document.querySelectorAll("td");
+	for(var cnt=0;cnt<tab.length;cnt++){
+		tab[cnt].innerHTML=(cnt+1);	
+	}  */
+	
+/*
+
+[상] 2. 주사위를 던지고(이미지6개가 0.1초마다 돌아가다가 3초에 멈추기), 
+	나온 수 만큼 말이 움직이게 처리하세요.(5X5테이블에서)
+*/
+
+
+var idx=0;
+var tot3=0;
+	 function dice2(){
+		 var ran2=0;
+		var set2 = setInterval(function(){
+			var divObj = document.querySelector("#dicedice");
+			var ran = parseInt(Math.random()*6+1);
+			divObj.innerHTML="<img src='dice"+ran+".png'>"; /* 주사위 돌리기 */
+			idx++;
+			if(idx==30){ /* 3초에서 멈추기 */
+				clearInterval(set2); 
+				idx=0;	/* 멈추면 idx 초기화 */
+				ran2=ran; /* 멈춘 번호 기억 */
+				tot3+=ran2; /* 주사위판에서 움직이는 말 누적 처리 하기 */
+				var h2Obj = document.querySelector("h4");
+				var cnt4=0; 
+				var set3 = setInterval(function(){ /* 주사위멈춘 후에 말 움직이기 */
+					tab[cnt4++].style.backgroundColor="tomato";
+					if(cnt4==tot3) { /* (그 전에 정지한 위치 + 새로 던진 주사위수) 까지 도달하면 멈추기*/
+						clearInterval(set3);
+					}
+				},100);
+			}
+		},100);
+		
+	} 
+	
+
+/*
+
+[중] 3. 4X5에서 상단에 출력되고 하단에 숫자 0~9까지 구성되고 4칙연산과 = 이 포함되어 있을 때, 
+	숫자를 누를때 마다, 합쳐진 최상단 셀에 표시되고 =을 클릭시, 계산결과가 처리되는 일반 계산기를 만드세요.
+[하] 4. 화살표 함수의 형식과 물건갯수과 가격을 처리해는 화살표함수를 처리하세요.
+//할당할 변수 = (매개변수1, 매개변수2)=>리턴할 결과값;
+*/
+	var tot = (price,cnt)=>price*cnt;
+	document.querySelector("h2").innerHTML= "총계: "+tot(3000,2);
+
+</script>
+
+
+
+
+
+
+

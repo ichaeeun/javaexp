@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+#kbo{visibility:hidden;}
+</style>
+<script type="text/javascript">
+function show1(){
+	var kbo = document.querySelector("#kbo");
+	var teams =["NC","두산","KT"];
+	var show="";
+	teams.forEach(function(team,idx,array){
+		show+="<tr><th>"+(idx+1)+"</th><td>"+teams+"</td></tr>";
+	});
+	kbo.innerHTML+=show;
+	kbo.style.visibility="visible";
+}
+
+</script>
+</head>
+<body>
+	<h3></h3>
+   <h2 align='center'>좋아하는 음식</h2>
+   <table align='center' border>
+   		<tr><th>번호</th><th>음식</th></tr>
+   </table>
+   
+   <ul id="list01">	
+   	</ul>
+   	
+   	<h2 align="center" onclick="show1()">2020 KBO 순위</h2>
+   	<table id="kbo">
+   		<tr><th>순위</th><th>팀명</th></tr>
+    </table>
+</body>
+<script type="text/javascript">
+/* 
+ # 배열과 반복문, 객체와 반복문 
+ 1. js의 배열의 기본 형식 
+ 	1) 기본 배열 선언과 할당 
+ 
+*/
+	// - 선언1 
+	var arry01=[];
+ 	// [](배열선언)- JSON형식
+ 	// new Array()	 - api배열 선언 방식 
+ 	// js에서는 배열 타입은 없고, 배열도 객체타입에 소속된다. 
+	//할당 : 배열명[index번호]= 데이터;
+	//		배열명.push(데이터); 
+	arry01[0]=25;
+	arry01.push(30);
+	console.log("arry01: "+arry01);
+	console.log("#arry01#");
+	console.log(arry01);
+  	// 배열명.length: 배열의 크기를 확인할 수 있다. 
+  	// - 선언2: (선언과 할당)
+	var arry02=["사과","바나나","딸기"];
+  	console.log("#arry02");
+  	console.log(arry02);
+  	
+  	//ex1) 배열로 물건가격을 할당하고, console.log 에 출력하세요 
+  	var price=[];
+  	price[0]=3000;
+  	price.push(4000); //push(마지막에 추가)
+  	price.push(5000);
+  	console.log(price);
+  	
+  	//ex2) 배열로 학생이름을 할당하고 출력하세요(화면 h3로)
+  	
+  	var student=["홍길동","신길동","김길동"];
+  	var show="";
+  	for(var i=0;i<student.length;i++){
+  		show+="<h3>"+student[i]+"</h3>";
+  	}
+  //document.body.innerHTML=show;
+  	// 배열은 여러가지 형태가 들어갈 수 있다. 
+  	// 배열의 마지막 형태는 객체형 배열이다.
+  	// var array04=[{name:"홍길동",age:25},{name:"신길동",age:28}];
+  	// array04[0]= {name:"홍길동",age:25}
+  	// array04[0].name, array04[0].age 
+  	
+  	
+/*
+ 2. js 배열의 특징 
+ 	1) 구조가 동적으로 변경이 가능하다 - 동적배열을 지원하고 있다. 
+ 	2) 배열에 여러가지 type을 한번에 저장이 가능하다. 
+ 		
+ */
+var array05=[25000,"안녕하세요",function(){return"리턴값";},true,{name:"홍길동",age:25	}, [20,50,30]];
+  	console.log("#여러가지 데이터 유형을 할당한 배열#");
+  	console.log(array05);
+  	console.log("3번째 데이터:"+array05[2]());	// 해당 함수값 리턴 
+  	console.log("5번째 데이터:"+array05[4].name); //객체 속성값 
+  	console.log("6번째 데이터:"+array05[5][1]);	//배열안에 배열 출력 
+ /*
+ 3. 배열과 여러 형식의 for문 
+ 	1) 배열 선언 : var 배열명 = [데이터1, 데이터2];
+  	2) 배열 호출 
+  		- for(var idx=0;idx<배열명.length;idx++){}	:idx: 숫자형  number 
+  		- for(var idx in 배열명){						:idx: 문자열형 string 
+  			idx: 배열의 index 값 
+  			배열명[idx]: 배열의 값 
+  			for in 구문안에 있는 idx를 연산처리할 때는 형변환(parseInt(idx),Number(idx))를 처리하여야 한다. 
+  		}
+  */
+  	console.log("#배열의 2번째 for문")
+  	for(var idx in arry02){
+  		console.log(idx+": "+arry02[idx])
+  	}
+  	//ex) for in 구문을 활용하여 좋아하는 음식 3개 배열을 테이블로 출력해보세요 
+  	var foods=["햄버거","피자","치킨"];
+  	var show2="";
+  	show2+="<table border><tr><td>순위</td><td>음식</td></tr><tr>"
+  	for(var idx in foods){
+  		show2+="<td>"+(Number(idx)+1)+"</td><td>"+foods[idx]+"</td></tr><tr>"
+  	}
+  	show2+="</table></tr>";
+ // 	document.body.innerHTML=show2;
+ 
+  	var show3="";
+ 	for(var idx in foods){
+ 		show3+="<tr>"
+ 		show3+="<th>"+(Number(idx)+1)+"</th>";
+ 		show3+="<td>"+foods[idx]+"</td>";
+ 		show3+="</tr>";
+ 	}
+ //	document.querySelector("단일 DOM")
+ 	document.querySelector("table").innerHTML+=show3;
+ 
+ 
+	 var show4="";
+ 	// 배열명.forEach(function(단위객체,index명, 배열){});
+ 	foods.forEach(function(food,idx,array){
+ 		
+ 		show4+="<li>"+(idx+1)+":"+food+"</li>";
+ 		
+ 	});
+ 	document.querySelector("#list01").innerHTML+=show4;
+
+/*
+ # DOM을 활용한 화면 처리 
+ 1. 전체화면변경 : body로 처리 
+ 	- document.body.innerHTML="전체화면에 변경/추가할 태그 삽입";
+ 2. 화면에서 특정한 구성요소의 내용을 변경 처리. 
+ 	1) 단일 구성요소 
+ 		- document.querySelector("css의 선택자").innerHTML 
+ 			ex) 하나만 있는 h1의 타이틀 내용 변경 
+ 			document.querySelector("h1").innerHTML = "안녕하요";
+ 			==> <h1>안녕하세요</h1> 
+ 		- document.querySelector("css의 선택자").style.스타일의 속성 = "스타일의 속성값"  
+ 			ex) 특정 요소객체의 css속성 처리 id가 h01인 h1의 배경색상 변경 
+ 			document.querySelector("#h01").style.backgroudColor="orange";
+ 			
+ 			<h1 id="h01" style="background-color:orange;">안녕</h1> 
+ 		- document.querySelector("css의 선택자").일반속성 = "고유 속성값"
+ 			ex) 요소객체의 기본 속성값 변경. 클래스 cls01의 정렬 변경 
+ 			document.querySelector(".cls01").align = "center"; 
+ 			<table class="cls01" align="center"> 	
+ 		 
+ 	2) 여러개의 구성요소 
+ 		- document.querySelectAll("h2"): 배열로 정의가 된다. 
+ 		ex) var arr=['홍길동']; arr[0]
+ 			var h2 = document.querySelectAll("h2");
+ 			h2[0].innerHTML = "좋은날";
+ 			h2[0].style.backgroundColor="yellow"; 
+ */
+//ex) 2020 kbo 순위를 테이블로 출력하세요 
+
+// ECMA6 에서 처리하는 for문 
+// for(const 단위데이터 of 배열) vs java => for(단위데이터: 배열)
+	var arry10 = [10000,20000,30000];
+	for (const element of arry10){
+		console.log(element);
+	}
+
+
+ //  document.querySelector("h2").innerHTML="js 시작^^";
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

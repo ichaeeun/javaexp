@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이미지 태그</title>
+</head>
+<body>
+<!-- 
+ # 이미지 태그의 활용 
+ 1. img태그는 주로 이미지 파일을 화면에 출력할 때, 사용된다. 
+ 2. 주요 속성 img 속성1="속성값" 속성2 ="속성값" ... 
+ 	1) src 
+ 		이미지 경로를 상대주소/절대주소로 설정해 줄 수 있다. 
+ 		현재 폴더에 이미지가 있을 때는 해당 이미지를 로딩해서 출력할 수 있다. 
+ 		이미지 폴더를 현재폴더에서 만들고 그 안에 이미지가 있을 때는 
+ 		폴더명/이미지명 형식으로 설정할 수 있다. 
+ 	2) width: 해당 이미지의 넓이를 지정할 때, 사용된다. 
+ 	3) height: 해당 이미지의 높이를 지정할 때, 사용된다. 
+ 	4) alt: alternative 선택적으로 혹시, 해당 이미지가 경로에 없을 때 
+ 		표시되는 text를 지정 
+ -->
+<h3>이미지 삽입</h3>
+<hr>
+<p> 엘비스 프레슬리의 사진입니다. </p> 
+<img src = "media/Elvis1.jpg" width="150" height="200"
+	alt = "Elvis">
+<img src ="media/kitae.jpg" width ="80" height ="100"
+	alt ="황기태사진없음">
+<img src = "http://img.naver.net/static/www/u/2013/0731/nmms_224940510.gif"
+	alt ="사진주소변경됨" width="100" height="100">
+	
+<!-- 
+ # 웹프로그래밍에서 경로 지정 
+ 1. 웹프로그램에서는 이미지를 호출하거나, 파일을 다운로드 하거나, 라이브러리를 
+ 	활용하거나, 다른 페이지를  포함할 때, 상대적/절대적 경로로 해당 파일을 호출한다. 
+ 2. 경로는 다음과 같이 두가지 형태로 접근하여 해당 파일을 사용할 수 있다. 
+ 	1) 상대적 경로 
+ 		- 현재폴더에 함께 있는 파일은 특별히 경로 지정 없이 호출할 수 있다. -->
+ 			<br>
+ 			<h2>현재 폴더에 있는 파일 </h2>
+ 			<img src="ElvisPresley.png"/>
+ <!--   - 현재 파일이 있는 폴더에서 하위 폴더를 만들어 해당 파일을 호출할 때는 
+ 			폴드명/파일명으로 접근할 수 있다.
+  -->
+  			<h2>현재 폴더에 폴더를 만들어 호출하는 파일 </h2>
+  			<img src="img/apple.png"/><br>
+  		
+  <!-- 
+  		- 현재 폴더에서 상위에 있는 파일을 호출할 때는 
+  			../경로폴더/파일. 
+  			ex)javaexp/WebContent/a02_html/a08_img.html 
+  			현재파일이 a08_img.html이고, a02_html폴드 하위에 있으면 
+  			../으로 하는 순간 ..상위폴드인 javaexp\WebContent로 
+  			경로가 지정되고, ../폴드를 지정하면 javaexp\WebContent\폴더로 
+  			경로가 지정된다. 
+   -->
+   			<h2>상위 폴더 하위에 폴더파일 호출</h2>
+   			<img src="../z01_img/banana.png"/>
+   			
+   			
+   <!-- 
+  ex1) 현재폴더에 좋아하는 애완동물 이미지를 위치시킨 후에 호출하세요 
+  ex2) 현재폴더에 하위로 img02폴더를 만들고 좋아하는 애완동물 2를 호출하세요 
+  ex3) WebContent 하위 z02_img 폴더에 좋아하는 애완동물 2를 위치시킨 후에 
+  	호출하세요 
+    -->
+    <h2>현재폴더에 있는 파일 </h2>
+    <img src="puppy.jpg">
+    <h2>현재폴더에 폴더만들어 호출</h2>
+    <img src="img02/puppy.jpg"><br>
+    <h2>상위에 있는 파일 호출</h2>
+    <img src="../z02_img/puppy.jpg">
+  <!-- 
+	2) 절대경로 
+		- 웹프로그램은 서버위치에서 이미지를 호출할 수 있다. 
+			http://localhost:7080/프로젝트명/ : 이경로 위치가 
+			실제 소스의 경로로는 /javaexp/WebContent 경로 위치가 동일하다. 
+			http://localhost:8080/javaexp는 절대 경로에 있다. 
+			
+		ex) WebContent\z01_img\banana.png 있으면 
+			http://localhost:8080/javaexp/z01_img/banana.png
+			로 접근이 가능하다. 
+			
+  			http://localhost:8080/javaexp/a02_html/puppy.jpg
+   -->
+     <h2> 절대경로1</h2>
+     <img src="/javaexp/a02_html/puppy.jpg"/>
+     <h2> 절대경로2</h2>
+     <img src="/javaexp/a02_html/img02/puppy.jpg"/>
+     <h2> 절대경로3</h2>
+     <img src="/javaexp/z02_img/puppy.jpg"/><br> 
+    <!--  
+      현재서버에서는 http://localhost:8080를 생략하고 호출하면 
+      절대경로 /javaexp/WebContent에서 모든 이미지가 접근이 가능하다. 
+     -->
+     
+    <!-- 
+    3) 외부페이지 호출 
+    	- 서버에서 외부페이지를 호출하면 현재 페이지의 이미지로 사용할 수 있다. 
+    	http://sample.bmaster.kro.kr (vue 연습 사이트,, ) 
+    	http://sample.bmaster.kro.kr/photos/89.jpg
+     -->
+     <h2> 외부페이지 이미지 호출</h2>
+     <img src="http://sample.bmaster.kro.kr/photos/1.jpg">
+     <img src="http://sample.bmaster.kro.kr/photos/2.jpg">
+     <img src="http://sample.bmaster.kro.kr/photos/3.jpg">
+     <img src="http://sample.bmaster.kro.kr/photos/4.jpg">
+     <img src="http://sample.bmaster.kro.kr/photos/5.jpg">
+     <img src="http://sample.bmaster.kro.kr/photos/6.jpg">
+     <img src="https://www.google.com/logos/doodles/2020/december-holidays-days-2-30-6753651837108830.5-s.png">
+     
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

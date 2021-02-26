@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/* 
+
+[html]
+[하] 1. js의 기본 출력 형식을 기본 예제를 통해서 기술하세요.
+		alert("경고창출력"); 
+		console.log("콘솔출력");
+		document.write("화면출력")
+		-- DOM객체 처리 
+		body 하단에 body에서 선언한 h1이 있으면 
+		document.querySelector("h1").innerHTML="출력4"; 
+		
+[하] 2. js의 기본 데이터 유형에 데이터를 할당해서 확인하고, 
+	데이터유형을 확인 하는 함수를 통해서 유형을 확인하세요.
+*/
+/* var stringVar = 'String'; 
+var numberVar = 5; 
+var booleanVar = true;	
+var functionVar = function(){};	
+var objectVar = {}; 	
+console.log("typeof(stringVar):"+typeof(stringVar));
+console.log("typeof(numberVar):"+typeof(numberVar));
+console.log("typeof(booleanVar):"+typeof(booleanVar));
+console.log("typeof(functionVar):"+typeof(functionVar));
+console.log("typeof(objectVar):"+typeof(objectVar)); */
+/*
+[하] 3. js의 입력/출력 형식과 해당 기능에 대하여 기술하세요.
+# 입력 
+confirm("메세지"): 리턴되는 값이 확인/취소로 boolean을 가져온다. 
+prompt("메세지","초기값") : 확인/취소로 리턴되는 값이 입력된 값과 null값 
+
+# 출력 
+alert()
+console.log()
+document.write()
+
+[중] 4. 기본 입력/출력 형식을 이용해서 학생의 이름, 국어, 영어, 수학 점수를 입력 받아서, 
+	해당 내용을 h3로 화면에 출력하되, 마지막에 출력 여부를 확인하여 
+	확인시에 평균값을 출력하고 취소시 총액을 출력하세요.\
+*/
+/* var name = prompt("이름을 입력하세요","이름");
+var kor = prompt("국어 점수 입력","국어");
+var eng = prompt("영어 점수 입력","영어");
+var math = prompt("수학 점수 입력","수학");
+var avg = confirm("출력하시겠습니까?");
+if(avg){
+	document.write("<h3>이름: "+name+"</h3><h3>평균점수: "+(Number(kor)+Number(eng)+Number(math))/3+"</h3>");
+}else {
+	document.write("<h3>이름: "+name+"</h3><h3>총점: "+(Number(kor)+Number(eng)+Number(math))+"</h3>");
+} */
+
+//window.onload=funtion(){}
+//	: 윈도우화면(BOM)이 다 로딩된 후, 실행할 내용 정의 
+//	head javascript에서 DOM객체를 인식할 수 있다. 
+
+window.onload=function(){
+	var name = prompt("이름을 입력하세요","홍길동");
+	var kor = prompt("국어점수 입력하세요","00");
+	var eng = prompt("영어점수 입력하세요","00");
+	var math = prompt("수학점수 입력하세요","00");
+	var isAvg = confirm("평균출력은 확인\n총계출력은 취소");
+		
+	document.querySelectorAll("h2")[0].innerHTML="이름: "+name;
+	document.querySelectorAll("h2")[1].innerHTML="국어점수: "+kor;
+	document.querySelectorAll("h2")[2].innerHTML="영어점수: "+eng;
+	document.querySelectorAll("h2")[3].innerHTML="수학점수: "+math;
+	
+	var tot=Number(kor)+Number(eng)+Number(math); 
+	if(isAvg){
+	 document.querySelectorAll("h2")[4].innerHTML="평균: "+tot/3;
+	}else{
+	 document.querySelectorAll("h2")[5].innerHTML="이름: "+tot;
+	}
+}
+/*
+[중] 5. 물건명/가격/갯수를 입력받아, 출력형식을 선택하게 하여 1:alert(), 2:console, 3:웹화면 로 하여
+    해당 형식으로 화면에 출력하세요 
+*/
+/* 
+var pname= prompt("물건명을 입력하세요","");
+var price= prompt("가격을 입력하세요","");
+var cnt= prompt("갯수를 입력하세요","");
+var no = prompt("출력형식(1:alert(), 2:console, 3:웹화면)선택","");
+if(no==1){
+	alert("물건명: "+pname+"\n가격: "+price+"\n갯수: "+cnt);
+}else if(no==2){
+	console.log("물건명: "+pname+"\n가격: "+price+"\n갯수: "+cnt);
+}
+else if(no==3){
+	document.write("<h2>물건명: "+pname+"</h2><h2>가격: "+price+"</h2><h2>갯수: "+cnt+"</h2>");
+} */
+
+/*
+[하] 6. let/var 변수의 차이를 기본예제를 통해서 기술하세요
+	var 변수는 무조건 선언할 때부터 전역변수로만 활용되는 문제 발생 
+	let: 지역변수와 전역변수의 명확한 구분 처리 
+	{
+		var variable = 273; 
+	}
+	{
+		console.log("다른 블 variable:"+variable);
+	}
+	console.log("전역 블럭 variable:"+variable);
+
+	{
+		let variable2 = 273; 
+	}
+	{
+		console.log("다른 블럭 variable2:"+variable2); // ====> error 
+	}
+	console.log("전역 블럭 variable2:"+variable2);
+*/
+</script>
+</head>
+<body>
+   <h2></h2>
+   <h2></h2>
+   <h2></h2>
+   <h2></h2>
+   <h2></h2>
+</body>
+<script type="text/javascript">
+/* 
+*/
+	var name = prompt("이름을 입력하세요","홍길동");
+	var kor = prompt("국어점수 입력하세요","00");
+	var eng = prompt("영어점수 입력하세요","00");
+	var math = prompt("수학점수 입력하세요","00");
+	var isAvg = confirm("평균출력은 확인\n총계출력은 취소");
+	
+  document.querySelectorAll("h2")[0].innerHTML="이름: "+name;
+  document.querySelectorAll("h2")[1].innerHTML="국어점수: "+kor;
+  document.querySelectorAll("h2")[2].innerHTML="영어점수: "+eng;
+  document.querySelectorAll("h2")[3].innerHTML="수학점수: "+math;
+  // 입력값은 문자열이기때문에 변환함수 처리해줘야한다. 
+  var tot=Number(kor)+Number(eng)+Number(math); 
+  if(isAvg){
+	  document.querySelectorAll("h2")[4].innerHTML="평균: "+tot/3;
+  }else{
+	  document.querySelectorAll("h2")[5].innerHTML="이름: "+tot;
+  }
+  
+ 
+//
+
+</script>

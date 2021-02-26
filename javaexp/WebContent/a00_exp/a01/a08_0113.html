@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+div{
+	display:inline-block;
+	border: 2px solid olive;
+	width:50px;
+	height:50px;
+	text-align:center;
+	backgroud-color:olive;
+}
+.ch:hover{
+	position:absolute;
+	top:50%;
+	left:50%;
+	background-color:orange;
+	color:white;
+}
+nav {
+	background-color:orange;
+}
+nav ul{
+	margin:0px;
+	padding:0px;
+	width:600px;
+	backgrond-color:pink;
+}
+#menubar ul li{
+	display:inline-block;
+	list-style-type:none;
+	padding: 0px 15px;
+	
+}
+nav ul li a {
+	text-decoration:none;
+}
+</style>
+<script type="text/javascript">
+	var isVisible=true;
+	function ch(btn){
+		var obj = document.querySelector("img");
+		if(isVisible){
+			obj.style.visibility="hidden";
+			btn.value="보여라";
+			isVisible=false;
+		}
+		else {
+			obj.style.visibility="visible";
+			btn.value="사라져라";
+			isVisible=true;
+		}
+	}
+</script>
+</head>
+<body>
+<!-- 
+
+[html]
+[하] 1. position의 속성과 속성값의 내용에 대하여 설명하세요.
+	position의 속성을 통해서 요소객체의 위치를 상대적/절대적으로 설정할 수 있다. 
+	- 속성값
+	1) static(기본) ex) div{position:static;}
+	2) relative: 상대적 배치 - 이전 요소객체(태그)를 기준으로 위치 지정 
+	3) absolute: 절대적 배치 - 전체 화면 기준으로 위치 지정 
+	3) fixed: 고정 위치 
+	4) float: 유동 위치 
+[하] 2. hello를 글자로 div 속성으로 만들고, 모든 div가 가상클래스 속성으로
+          마우스 오버했을 때, 절대적 위치로 중앙에 위치가 되고 배경색상과 글자 색상이 변경 되게 하세요.
+   -->
+ <div class="ch">h</div>
+ <div class="ch">e</div>
+ <div class="ch">l</div>
+ <div class="ch">l</div>
+ <div class="ch">o</div>
+   <!-- 
+[하] 3. display:fixed;와 float:right|left;의 차이점을 기술하세요.  
+fixed는 특정한 위치로 고정적으로 나타나는 부분 
+		스크롤이나 화면 축소/확대 시 위치 고정 
+float:right : 해당 위치로 왼쪽 오른쪽으로 붙여져서 출력 
+
+
+[하] 4. visibility와 overflow의 공통 속성과 다른 속성을 기술하세요.
+# visibility
+1. 특정한 대상 요소객체의 위치 공간을 잡고, 
+	보이는 처리(default, visible),
+	보이지 않는 처리(hidden)를 할 수 있다. 
+# overflow
+1. 대상객체에 포함된 컨텐츠(문자열, 요소객체-태그)가 크기가 넘칠 때, 
+	어떻게 처리하는지를 선언하는 속성
+2. 속성값
+	hidden: 넘치는 부분을 보이지 않게 처리 
+	visible: 넘치는 그대로 두기 
+	scroll: scroll bar 만들어져서 scroll로 확인할 수 있게 처리 
+[중] 5. button으로 클릭시, 특정 이미지가 보였다가 보이지 않기를 반복처리 되게 하세요.
+-->
+	<br>
+	<input type="button" value="사라져라" onclick="ch(this)"/><br>
+	<img src="spongebob.png" width="200" height="200">
+	
+	
+<!-- 
+[하] 6. 메뉴항목을 ul,li, a로 상단에 왼쪽으로 리스트 처리하고 iframe으로 해당 내용이 변경되게 처리하세요.
+ -->
+ <nav id="menubar">
+	<ul>
+		<li><a href="#" target="main">Home</a></li>
+		<li><a href="a08_0113_1.html" target="main">Espresso</a></li>
+		<li><a href="a08_0113_2.html" target="main">Capuccino</a></li>
+		<li><a href="a08_0113_3.html" target="main">Cafe Latte</a></li>
+		<li><a href="a08_0113_4.html" taraget="main">F.A.Q</a></li>
+	</ul>
+</nav>
+<iframe name="main" width="600" height="400"></iframe>
+</body>
+</html>

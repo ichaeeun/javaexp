@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- 
+# 테이블
+1. 전체적인 리스트 되는 데이터를 2차원으로 나타낼때 활용되는 태그이다. 
+2. 주요 구성요소 
+	1) table : 최상위 내용을 태그, 전체 속성을 설정할 때 사용된다. 
+	2) caption : 타이틀을 정의 
+		thead : 테이블의 헤드를 선언할 때 
+		tbody : 테이블의 몸체인 body를 선언 
+		tfoot : 테이블의 하단부분을 선언 
+	3) tr : table row 행단위로 th,td를 넣는 태그 
+	4) th : table head 주로 테이블의 타이틀로 중앙정렬과 bold를 처리해준다. 
+	   td : table data 실제 들어갈 데이터처리 
+		
+3. 속성 
+	
+ -->
+<h3>기본 구조를 가진 표</h3>
+<hr>
+<table border="1">
+	<caption>1학기성적</caption>
+	<thead>
+		<tr><th>이름</th><th>HTML</th><th>CSS</th></tr>
+	</thead>
+	<tbody>
+		<tr><td>황기태</td><td>80</td><td>70</td></tr>
+		<tr><td>이재문</td><td>95</td><td>99</td></tr>
+		<tr><td>이병은</td><td>40</td><td>61</td></tr>
+	</tbody>
+	<tfoot>
+		<tr><th>합</th><th>255</th><th>230</th></tr>
+	</tfoot>
+</table>
+<!-- 
+테이블은 이와같이 기본 구성으로 되어 있지만, 생략이 가능한 부분과 생략불가한 부분이 있다. 
+1. 위에 caption, thead, tbody, tfoot은 생략이 가능하다. 
+2. 하지만 tr td th 부분은 반드시 사용해서 테이블 구조를 만들 수 있다. 
+3. table의 기본속성: table 속성1="속성1값" 속성2="속성2값" 
+	1) width: 테이블 전체 폭 
+	2) height: 테이블 전체 높이 
+	3) align: 전체화면 대비 정렬 위치 left, right, center 
+	4) border: cell로 구분 지정. 
+ -->
+<h2>2x2</h2>
+<table width="200" height="200" border>
+	<tr><td>1행1열</td><td>1행2열</td></tr>
+	<tr><td>2행1열</td><td>2행2열</td></tr>
+</table>
+<!-- 
+ex) 3X3 중앙정렬테이블, 4X4 왼쪽 정렬 테이블 
+ -->
+ <h2>3X3</h2>
+ <table align="center" width="200" height="200" border>
+ 	<tr><td>1행1열</td><td>1행2열</td><td>1행3열</td></tr>
+ 	<tr><td>2행1열</td><td>2행2열</td><td>2행3열</td></tr>
+ 	<tr><td>3행1열</td><td>3행2열</td><td>3행3열</td></tr>
+ </table>
+ 
+ <h2>4X4</h2>
+ <table align="left" width="300" height="300" border><br> 
+ 	<tr><td>1행1열</td><td>1행2열</td><td>1행3열</td><td>1행4열</td></tr>
+ 	<tr><td>2행1열</td><td>2행2열</td><td>2행3열</td><td>2행4열</td></tr>
+ 	<tr><td>3행1열</td><td>3행2열</td><td>3행3열</td><td>3행4열</td></tr>
+ 	<tr><td>4행1열</td><td>4행2열</td><td>4행3열</td><td>4행4열</td></tr>
+ </table>
+ 
+ <!--
+ 	번호 물건명 가격 갯수 타이틀로 테이블 구성
+ 	1	사과	 3000 2
+ 	2	바나나 4000 3
+ 	3	오렌지 1000 4
+  -->
+  
+  <h2 align="center">과일</h2>
+  <table align="center" width="200" height="200" border>
+  	<thead>
+  		<tr><th>번호</th><th>물건명</th><th>가격</th><th>갯수</th></tr>
+  	</thead>
+  	<tbody>
+  		<tr><td>1</td><td>사과</td><td>3000</td><td>2</td></tr>
+  		<tr><td>2</td><td>바나나</td><td>4000</td><td>3</td></tr>
+  		<tr><td>3</td><td>오렌지</td><td>1000</td><td>4</td></tr>
+  	</tbody>
+    </table>
+<!-- 
+# 셀병합 처리 
+1. th, td 속성 
+	colspan = "열단위 병합할갯수" 
+		확장이 된경우, 옆에 있는 cell 하나를 삭제해야 한다. 
+	rowspan = "행단위 병합할갯수" 
+ -->
+	<h2 align ="center">셀병합</h2>
+	<table align = "center" width="200" height="200" align="left" border>
+	<col width="25%"> <!-- col(열)의 비율설정 -->
+	<col width="25%">
+	<col width="25%">
+	<col width="25%">
+		<tr><td colspan="2">1</td><td>3</td><td>4</td></tr>
+		<tr><td rowspan="3">5</td><td rowspan="2" colspan="2">6</td><td>8</td></tr>
+									<!-- 하나의 cell에서 rowspan과 colspan을 동시에 설정하면 
+										rowspan갯수*colspan갯수 범위 내에서 모든 cell 병합 -->
+		<tr><td>12</td></tr>
+		<tr><td>14</td><td>15</td><td>16</td></tr>
+	</table>
+	<!-- 
+	ex1) 2*2 테이블 생성 후 가로 cell병합 하세요 
+	ex2) 세로 cell병합
+	ex3) 3*3 테이블에서 
+		1 2 3
+		4 5 6
+		7 8 9 
+		2,3 병합처리, 5,8병합처리 
+	ex4) 3*3 테이블에서 
+		1 2 3
+		4 5 6
+		7 8 9 
+		1,4,7 병합, 2,3 병합, 8,9 병합 
+	 -->
+	 <h2>가로셀병합</h2>
+	 <table border width="100" height="100">
+	 	<tr><td colspan="2">1</td></tr>
+	 	<tr><td>3</td><td>4</td></tr>
+	 </table>
+	  <h2>세로셀병합</h2>
+	 <table border width="100" height="100">
+	 	<tr><td rowspan="2">1</td><td>2</td></tr>
+	 	<tr><td>4</td></tr>
+	 </table>
+	  <h2>셀병합</h2>
+	 <table border width="200" height="200">
+	 	<tr><td>1</td><td colspan="2">2</td></tr>
+	 	<tr><td>4</td><td rowspan="2">5</td><td>6</td></tr>
+	 	<tr><td>7</td><td>9</td></tr>
+	 </table>
+	   <h2>셀병합</h2>
+	 <table border width="200" height="200">
+	 	<tr><td rowspan="3">1</td><td colspan="2">2</td></tr>
+	 	<tr><td>5</td><td>6</td></tr>
+	 	<tr><td colspan ="2">8</td></tr>
+	 </table>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

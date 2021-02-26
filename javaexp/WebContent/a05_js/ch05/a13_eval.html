@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/* 
+ # 문자열을 코드화해주는 eval() 
+ 
+*/
+// 문자열을 생성합니다. 
+var willEval = '';
+willEval += 'var number =10;';
+willEval += 'alert(number);';
+// eval()함수를 호출합니다. 
+// eval(willEval);
+//
+var show="";
+function calcu(cal){
+	// 
+	var num01 = document.querySelector("#num01").value;
+	var num02 = document.querySelector("#num02").value;
+	// 입력된 값을 가져온다. 
+	show=num01+cal+num02;
+	// alert(eval(show)); // 형변환 처리 하지 않더라고 연산된다. 
+	document.querySelector("h4").innerHTML = show+"="+eval(show);
+}
+</script>
+</head>
+<body>
+   <h2></h2>
+   <input type="text" id ="num01" value="0"><br>
+   <input type="text" id ="num02" value="0"><br>
+   <input type="button" value="+" onclick="calcu('+')">
+   <input type="button" value="-" onclick="calcu('-')">
+   <input type="button" value="*" onclick="calcu('*')">
+   <input type="button" value="/" onclick="calcu('/')">
+   <input type="button" value="%" onclick="calcu('%')">
+   <h4></h4>
+
+   
+</body>
+<script type="text/javascript">
+/* 
+ 
+ 
+*/
+//
+
+</script>

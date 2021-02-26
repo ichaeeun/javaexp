@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/* 
+ ex) h3 번호 1~3까지 있고, 
+ 	 h3 + 기호가 있다. 
+ 	 h3 = 기호가 있다. 
+ 	 h4 결과출력 
+ 	 h3, h3의 각 번호와 + 기호를 클릭 시 h4에 출력되게하고 
+ 	 h3를 누르는 순간 h4에 연산결과가 처리되게 하세요 
+*/
+//
+var h4Obj;
+ //입력한 내용을 h4화면에 누적해서 출력처리 
+function cal(data){
+	 h4Obj=document.querySelector("h4");
+	 h4Obj.innerHTML += data; 
+	 
+ }
+ // = 를 입력했을때, h4에 있는 내용을 eval함수를 통해서 연산처리 
+ function calR(){
+	 var result=eval(h4Obj.innerHTML);
+	// var h5Obj=document.querySelector("h5");
+	// h5Obj.innerHTML=h4Obj.innerHTML+" ="+result;
+	h4Obj.innerHTML+=" ="+result;
+ }
+ function reset(){
+	 h4Obj.innerHTML="";
+ }
+
+</script>
+</head>
+<body>
+    <h2></h2>
+	<h3 onclick="cal(this.innerHTML)">1</h3>
+	<h3 onclick="cal(this.innerHTML)">2</h3>
+	<h3 onclick="cal(this.innerHTML)">3</h3>
+	<h3 onclick="cal(this.innerHTML)">+</h3>
+	<h3 onclick="calR()">=</h3>
+	<h3 onclick="reset()">reset</h3>
+	<h4></h4>
+	<h5></h5>
+  
+</body>
+<script type="text/javascript">
+/* 
+ 
+ 
+*/
+   document.querySelector("h2").innerHTML="연산식";
+//
+
+</script>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h3>텍스트 꾸미기</h3>
+<p>
+		<b>진하게</b><br> <!-- 진하게  표기. -->
+		<!-- 
+		b: 태그 자체에서 특정한 기능을 처리해서 화면에 보여주게 한다. 
+		bold: 진하게 표기 
+		 -->
+		<strong>중요한</strong><br>
+		<em>강조</em><br>
+		<i>이탤릭으로 강조</i><br> <!-- 이탤릭체 -->
+			<b><i>진하게 이탤릭으로 강조</i></b>		<br>
+		  <!-- 태그를 중첩해 적용 계층형으로 적용하여야 한다.  -->
+				
+		보통문자 <small>한단계 작은 문자</small><br>
+		<del>삭제</del><br>	<!-- 중간에 사선처리 -->
+		<ins>추가</ins><br>  <!-- 하단에 언더라인 처리 -->
+		보통문자의 <sup>윗첨자</sup><br>
+		보통문자의 <sub>아래첨자</sub><br>
+		<mark>하이라이팅</mark><br>
+	<!--  mark 자체 태그에 노란색 배경으로 하이라이팅 기능이 포함되어 처리된다. -->
+</p>
+<!-- 
+# 블록태그와 인라인 태그 
+1. 태그는 줄바꿈을 포함하는 태그이냐에 따라 구분되어지는 형태가 있다. 
+	1) 블록태그: p, h1, div, ul
+	2) 인라인태그: 텍스트꾸미기관련한 태그, a, img, span 
+		해당 태그를 사용하더라다도 라인이 바뀌지 않는 태그를 말한다. 
+ -->
+ <h3>사랑</h3> <!--블럭 -->
+ <hr>
+ <div style="background-color:skyblue; padding:20px;">
+ <!-- 
+ css inline 설정. 
+ 1. css 속성은 head에서 <style type="text/css"></style> 
+ 	형식으로 선택자{속성:속성값} 해당 페이지에 css설정 내용이 적용 
+ 	<style type="text/css">
+	h2{background-color:blue; color:yellow;}
+</style>
+ 2. 태그 style ="속성:속성값;" 해당 라인만 css가 적용 
+ 	background-color:skyblue; 배경색상 지정 
+ 	padding:20px; 내부글자와 테두리라인 사이의 간격을 지정 
+ 	
+  -->
+ 내가 사람의 방언과 천사의 말을 할지라도 
+ <span style="color:red">사랑</span>이 없으면 소리나는 구리와 울리는 꽹가리가 되고,
+ <span style="color:red">사랑</span>이 없으면 아무 것도 아니라. 
+ <!-- span은 인라인 태그 -->
+ </div>
+ <p>~사랑~ </p>
+ 
+</body>
+</html>
+
+
+

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- 
+html
+[하]1. a 태그에 target속성에 있어서 속성값에 대한 연관관계를 간단한 예제로 설명하세요.
+	<a href="../a02_html/a01_start.html	target="name">프레임이름</a>
+	target="name"을 설정하면 프레임이름이 name인 곳으로 mapping 된다. 
+	<a href="../a02_html/a01_start.html	target="_self">현재화면</a>
+	target="_self" 설정하면 현재 프레임이 변경된다. 
+	<a href="../a02_html/a01_start.html	target="_top">탑</a>
+	target="_top" 설정하면 현재 프레임이 포함되어 있는 최상위 윈도우가 변경된다. 
+	<a href="../a02_html/a01_start.html	target="_blank">새창</a>
+	target="_blank"설정하면 새창에서 해당페이지가 로딩된다. 
+[하]2. 비디오/오디오 관련 속성을 기본 예제와 함께 설명하세요.
+	<video id="vi" src="../a02_html/media/bear.mp4" width="300" height="200"
+		controls autoplay="autoplay" muted = "muted">
+	</video> 
+	<script type="text/javascript">
+		document.querySelector("#id").play();
+	</script>
+	<audio src="../a02_html/media/EmbraceableYou.mp3" autoplay></audio>
+	src="비디오파일이름",controls 는 비디오밑에 컨트롤바를 나타내고, 
+	autoplay는 자동재생 속성이다. 
+	
+[중]3. 프로젝트형 과제의 메인화면을 iframe으로 구성하여 link 이동까지 처리해보세요.
+
+-->
+<iframe src="top01.html" name="top01" width="100%" height="250"></iframe>
+<iframe src="main01.html" name="main01" width="100%" height="800"></iframe>
+<!-- 
+-----top01.html------ 
+<style type="text/css">
+	div{text-align:center;}
+	tr{text-align:center;}
+</style>
+
+<body>
+<div>
+<a  href="main01.html" target="main01">
+
+<img  src="logo.png" width="200" height="100"></a></div>  로고클릭시 메인화면이동 
+
+<table border align="right" width="300" height="50">
+	<tr><td><a href="signin01.html" target="main01">회원가입</a></td> 클릭시 메인화면에서 해당 페이지로이동 
+	<td><a href="login01.html" target="main01">로그인</a></td>
+	<td><a href="service01.html" target="main01">고객센터</a></td></tr>
+</table>
+
+<table border width="100%" height="80">
+	<tr><td><a href="ui01/category.html" target="main01">전체카테고리</a></td>
+	<td><a href="ui01/newprod.html" target="main01">신상품</a></td>
+	<td><a href="ui01/bestprod.html" target="main01">베스트상품</a></td>
+	<td><a href="ui01/saleprod.html" target="main01">알뜰상품</a></td>
+	<td><a href="ui01/search.html" target="main01">검색</a></td>
+	<td><a href="ui01/basket.html" target="main01"><img src="basket.png" width="30" height="30"></a></td></tr>
+	
+</table>
+</body>
+
+----main01.html----
+<body>
+<a href="event01.html" target="_self">
+<img src="event.png" width="100%" height="100">
+</a>
+<iframe src="ui01/recoprod.html" name="reco" width="100%" height="300"></iframe>
+
+</body>
+--> 
+</body>
+</html>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/* 
+ 
+ 
+*/
+//
+window.onload=function(){ 
+ 	// document.querySelector("h2").innerHTML="";
+ 	// 변수를 선언합니다. 
+ 	var child = window.open('','','width=300, height=200');
+ 	var width = screen.width; // 전체화면의 넓이 
+ 	var height = screen.height; // 전체화면의 높이 
+ 	child.moveTo(0,0);
+ 	child.resizeTo(width,height);
+ 	// 1초마다 함수를 실행합니다. 
+ 	setInterval(function(){
+ 		child.resizeBy(-20,-20);
+ 		child.moveBy(10,10);
+ 	},1000); 
+ 	
+ 	this.onkeyup=function(){
+	 	if(event.keyCode==38){
+	 		var child2 = window.open('','','width=300, height=200');
+	 		child2.moveTo(500,100);
+	 		child2.document.write('커져라');
+	 		setInterval(function(){
+	 			child2.resizeBy(20,20);
+	 			child.moveBy(-10,-10);
+	 		},1000);
+	 	}
+	 	if(event.keyCode==40){
+	 		var child3=window.open('','','width=1000,height=500');
+	 		child3.moveTo(500,100);
+	 		child3.document.write('작아져라');
+	 		setInterval(function(){
+	 			child3.resizeBy(-20,-20);
+	 			child3.moveBy(10,10);
+	 		},1000);
+	 	}
+ 	}
+ 	
+ 	
+}; 
+// ex) 초기에 윈도우창으로 로딩해서, 키이벤트를 통해서 
+// 		화살표 위로 클릭 시(커져라 출력) 윈도창이 크게 되고, 화살표 아래를 클릭 시(작아져라)
+// 		윈도창이 작게 처리되게 하세요 
+
+</script>
+</head>
+<body>
+   <h2></h2>
+   
+</body>

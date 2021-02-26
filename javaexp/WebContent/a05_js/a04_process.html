@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/* 
+ # 조건문/반복문/배열 
+ 1. if(boolean) 조건문 
+ 	switch(){case: ;//}
+ 2. for(초기값;반복조건;증감연산자)
+	 while(){}	do{}while(); 
+ 3. 배열 
+ 	1) 선언 
+ 	var 배열명 = []; 
+ 	배열명[index번호] = 데이터할당;
+ 	배열명.push("추가할데이터"); : 배열의 마지막 데이터에 추가. 
+ 	배열명.pop(): 배열의 마지막데이터를 return하면서, 배열에서 삭제 
+ 	배열명[index]=null; 
+ 		js에서는 동적 배열을 허용한다. 
+ 	
+ 	var 배열명 = [데이터1,데이터2,데이터3..]; 
+*/
+//
+</script>
+</head>
+<body>
+   <h2></h2>
+</body>
+<script type="text/javascript">
+/* 
+document.body.innerHTML: 화면에 출력할 내용 
++= : 기존내용에 덧붙여서 처리 
+*/
+	// 반복문 처리 
+	for(var cnt=1;cnt<=10; cnt++){
+		 document.body.innerHTML+="<h3>번호: "+cnt+"</h3>";
+	} 
+// ex1) h1을 이용해서 카운트다운 10~1까지 출력하세요. 
+	for(var cnt=10;cnt>=1;cnt--){
+		document.body.innerHTML+="<h1>카운트다운: "+cnt+"</h1>";
+	}
+// ex2) ul li 을 이용해서 list내용 선택1~선택5까지 출력하세요. 
+	document.body.innerHTML += `<ul>`;
+	for(var ch=1;ch<=5;ch++){
+		document.body.innerHTML+= `<li>선택:${ch}</li>`
+	}
+	document.body.innerHTML += `</ul>`;
+// ex3) 테이블의 td를 이용해서 1~16까지 출력하세요. (+if문)  
+//		1 2 3 4
+//		5 6 7 8 
+// 1) table을 출력하는 화면을 구현 
+//	<table border><tr><td>테이블</td></tr></table> 
+// 2) 반복문이 들어갈 부분 확인 
+//		1~16 
+
+// 3) 조건문으로 tr이 추가될 부분과 tr을 닫아야할 부분을 구분하여 처리 
+	/* var colrow=prompt("단위 col/row수를 입력하세요","1");
+
+	var show="<table border><tr><td>테이블</td></tr></table>";
+	document.body.innerHTML += show;
+	
+	var show2="";
+	show2+="<table width='30%' border>";
+	show2+="<tr>";
+	
+	for(var cnt=1;cnt<=colrow*colrow;cnt++){
+		if(cnt%colrow==0){
+			show2+="<td>"+cnt+"</td></tr><tr>"
+		}else{
+			show2+="<td>"+cnt+"</td>";
+		}
+	}
+	show2+="</tr>";
+	show2+="</table>";
+	document.body.innerHTML+=show2; */
+// ex1) 3 * 3 테이블을 생성해보세요 (1단계) 
+// ex2) 행과 열의 값을 받아서 테이블을 생성해보세요, 특정한 컬럼(랜덤)은 배경색을 노란색 (3단계) 
+	var col=prompt("단위 col수를 입력하세요","1");
+	var row=prompt("단위 row수를 입력하세요","1");
+
+	var show2="";
+	show2+="<table width='30%' border>";
+	show2+="<tr>";
+	
+	for(var cnt=1;cnt<=col*row;cnt++){
+		if(cnt%col==0){
+			show2+="<td>"+cnt+"</td></tr><tr>"
+		}else{
+			show2+="<td>"+cnt+"</td>";
+		}
+	}
+	show2+="</tr>";
+	show2+="</table>";
+	document.body.innerHTML+=show2;
+
+	
+</script>
+
+
+
+
+
+
+
+

@@ -1,0 +1,67 @@
+조별 과제(프로젝트 공고) 
+1. 기간: (1/8~2/5) - 선택 
+	1) front단 (html/js 분리 3주씩)
+	2) front단 (html/js 통합 4주) 
+2. 매주마다 진행 내용 전달 
+	1/3째주는 중간 및 최종 발표(매주 금요일) 
+	2/4째주는 중간 및 최종 발표(매주 금요일) 
+3. 범위 
+	1) 설계 
+		요구사항 정의서,
+		화면설계서 
+		DB설계/DB 스키마 구현 및 데이터 입력 
+		화면별 sql 작성 
+	2) front end 구현 
+		css, html, (javascript) 
+4. 일정계획 
+	1) 1/11 - 주제선정/요구사항개요 
+	2) 1/13 - 요구사항/전체일정계획, 화면설계일부
+	3) 1/15 - 화면설계완료 
+	4) 2주차 - DB 설계, sql작성, 화면구현  
+	5) 3주차 - 화면구현 
+	
+---------------------------
+1) oracle jdk 최근버전 설정(java se 15) 
+2) eclipse for java enterprises java developers 
+	c:\\a01_javaexp\\eclipse
+	c:\\a01_javaexp\\workspace
+	c:\\a01_javaexp\\tomcat 
+3) oracle xe 다운로드 설치 
+	관리자비번: 1111 
+	c:\oraclexe\app\oracle\product\11.2.0\server\rdbms\admin\scott.sql
+		을 cmd 디폴트 계정() c:/Users/sist) 여기 붙여넣기함 
+		
+	scott.sql(샘플파일 ) 파일 변경
+	- TIGER 를 tiger 로 소문자 변경 
+	
+	cmd sqlplus 
+		system 
+		1111로 접근 
+		@ scott.sql  => 계정생성과 sample파일 생성 
+		conn scott/tiger; 로 접속하여 
+		select * from emp; 명령어를 통해서 실행한다.
+		
+	c:\oraclexe\app\oracle\product\11.2.0\server\jdbc\lib\ojdbc6.jar
+		복사해서 javaexp\WebContent\WEB-INF\lib에 붙여넣기
+	
+4) eclipse dbeaver 플러그인 설치 
+	1) 상단메뉴 help ==> market place
+	2) dbeaver 검색 후, dbeaver 7.3.0 install
+
+	데이터베이스에 드라이버관리자에 가서 oracle ==> edit 클릭 
+	3) add file을 통해서 WebContent\WEB-INF\lib\ojdbc6.jar에 있는 
+		드라이버 선택 
+	4) find class ==> oracle.jdbc.driver.OracleDriver 선택 
+	5) 데이터베이스메뉴 새데이터베이스연결 oracle 선택 
+		host: localhost   port:1521
+		sid: XE
+		계정: scott/tiger
+		test connection을 통해 확인한 후, finish
+
+5) 한글/오피스는 개인설치 파일로 ,, 
+
+
+
+
+
+

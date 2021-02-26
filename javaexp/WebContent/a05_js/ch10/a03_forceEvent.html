@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/* 
+ 
+ 
+*/
+//
+window.onload=function(){ 
+ 	// document.querySelector("h2").innerHTML="";
+ 	var buttonA = document.getElementById('button-a');
+ 	var buttonB = document.getElementById('button-b');
+ 	var counterA = document.getElementById('counter-a');
+ 	var counterB = document.getElementById('counter-b');
+ 	// 이벤트를 연결합니다. 
+ 	buttonA.onclick=function(){
+ 		counterA.innerHTML = Number(counterA.innerHTML) +1;
+ 	};
+
+ 	buttonB.onclick=function(){
+ 		counterB.innerHTML = Number(counterB.innerHTML) +1;
+ 		// buttonA의 선언된 내용을 강제적으로 수행하여, 
+ 		// 이벤트를 발생하지 않더라도 코드상 이벤트가 수행된것과 동일한 효과를 처리할 수 있다. 
+ 		buttonA.onclick();
+ 	};
+ 	// ex) ButtonC, buttonD 만들고, 
+ 	// 	   ButtonC를 클릭했을 때, 첫번째 h2에 ★가 하나씩 추가되게 처리하고 
+ 	// 	   ButtonD를 클릭했을 때, 두번째 h3에 ❄가 하나씩 추가되게 처리한다. 
+ 	//	   결과를 확인한 후 buttonD의 이벤트 핸들러에 buttonC이벤트 강제처리를 수행하게 하세요 ︎
+ 	var buttonC = document.getElementById("button-c");
+ 	var buttonD = document.getElementById("button-d");
+ 	var h3Obj1 = document.getElementById("h3Obj1");
+ 	var h3Obj2 = document.getElementById("h3Obj2");
+ 	buttonC.onclick=function(){
+ 		h3Obj1.innerHTML += '★';
+ 	};
+ 	buttonD.onclick=function(){
+ 		h3Obj2.innerHTML += '❄';
+ 	//	buttonC.onclick();
+ 	};
+ 	setInterval(function(){
+ 		buttonC.onclick();
+ 		buttonD.onclick();
+ 	},1000);
+}; 
+</script>
+</head>
+<body>
+   <h2></h2>
+   <button id="button-a">ButtonA</button>
+   <button id="button-b">ButtonB</button>
+   <button id="button-c">ButtonC</button>
+   <button id="button-d">ButtonD</button>
+   <h1>Button A - <span id="counter-a">0</span></h1>
+   <h1>Button B - <span id="counter-b">0</span></h1>
+   <h3 id="h3Obj1"></h3>
+   <h3 id="h3Obj2"></h3>
+</body>

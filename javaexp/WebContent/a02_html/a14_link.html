@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- 
+# hyperlink 만들기 
+1. hyperlink란 다른 html페이지와 연결하여 
+	1) 현재 서버에 있는 html페이지의 특정 위치로 이동할 수 있을 뿐만 아니라 
+		ex) a href="a01.start.html" 현재 폴더에 있는 특정한 페이지로 이동 
+	2) 외부 서버에 있는 페이지로 이동을 가능하게 한다. 
+		ex) a href="http://www.naver.com" 네이버 
+	3) 이미지로 링크 
+		a href = "" img 
+2. 기본 형식 
+	a href="이동할페이지" target="페이지가 출력할 이름" 
+ -->
+ <h3>링크 만들기</h3>
+ <hr>
+ 포털사이트
+ <ul><!-- 외부페이지로 이동처리 -->
+ 	<li><a href="http://www.naver.com">네이버</a></li>
+ 	<li><a href="http://www.daum.net">다음</a></li>
+ </ul>
+ 신문사이트
+ <ul><!-- 이미지로 외부사이트 연결 -->
+ 	<li><a href="http://www.etnews.com">
+ 		<img src="media/iconetnews.png" alt="전자신문">
+ 		</a>
+ 	<li><a href="http://www.chosun.com">
+ 		<img src="media/iconchosun.png" alt="조선일보">
+ 		</a>
+ </ul>
+ <!-- 
+ 3.하이퍼링크 텍스트 색상 
+ 	1) 초기 색상 : 파란색으로 밑줄과 함께 표시 
+ 	2) 방문 후 : 보라색으로 변경된다. 
+ 	3) 마우스 클릭 시 : 누르고 있는 동안 색상은 빨간색 
+ 	cf) css로 색상변경이 가능하다. 
+ 	
+  -->
+ <hr>
+ <!-- 상대적/절대적 위치로 서버에 있는 특정페이지로 이동처리 
+		1) 현재파일과 동일할 때 - 파일명
+		2) 현재 폴더하위 - 폴더명/파일명
+		3) 상위폴더 - ../파일명, ../폴더명/파일명 
+		4) /프로젝트명/폴더명/파일명     
+ -->
+ <a href="a01_start.html"> a01_start.html페이지로 이동</a>
+ 
+ <h3>링크의 target 속성활용</h3>
+ <hr>
+ <ul>
+ <!-- 
+ # a 태그의 target 속성 
+ 0. 형식 <a href="" target="속성값"> 
+ 1.속성값	
+ 	_blank : 새로운탭/창으로 페이지가 로딩 
+ 	_self : 현재페이지를 변경처리 
+ 	
+ 	# 상위 페이지에서 frame 페이지 간의 관계에 있어서 처리 
+ 	# 이 속성을 설정하는 페이지는 하위 frame 페이지 
+ 	_parent : window.open()(js), iframe으로 페이지  호출 시 사용
+			 하위 프레임 안에서 링크로 상위 프레임의 내용을 변경할 때. 
+ 	_top : window.open()(js), iframe으로 페이지 호출 시 최고 레벨 창을 변경 처리 
+  			하위프레임 안 또는 계층 구조상 그 하위 프레임 안에서 최상위 초기화면을 
+  			변경대상으로 할 때. 
+  	프레임이름: 해당 프레임의 페이지를 변경처리 		
+  -->
+ 	 <li><a href="http://www.w3.org" target="_blank">W3C(새윈도우,_blank)</a>
+ 	 <li><a href="http://www.etnews.com" target="_self">전자신문(현재윈도우,_self)</a>
+ 	 <li><a href="http://www.naver.com" target="_parent">네이버(부모윈도우,_parent)</a>
+ 	 <li><a href="http://www.mk.co.kr" target="_top">매일경제신문(브라우저윈도우,_top)</a>
+ </ul>
+ <!-- 
+ # 페이지 내에 특정한 위치로 이동하기 
+ 1. 특정위치를 태그의 속성으로 id="아이디명"으로 설정하고 href="#아이디명" 으로 하면, 
+ 	내부 페이지의 특정 위치로 이동이 가능하다. 
+  -->
+ <h3>Elvis Presley</h3>
+ <hr>
+ <ul>
+ 	<li><a href="#love">Love me tender</a>	
+ 	<li><a href="#can">Can't help falling in love</a>	
+ 	<li><a href="#it">It's now or never</a>	
+ </ul>
+<!-- 위에 href="#love"부분을 클릭 시 , id="love"로 설정된 위치로 이동한다.--> 
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<h3 id="love">Love me tender</h3>
+Love me tender, Love me sweet, Never let me go.<br>
+You have made my life complete,<br>
+And I love you so.<br>
+Love me tender, Love me true,<br>
+All My dreams fulfilled.<br>
+For my darling I love you, And I always will.<br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<h3 id="can">Can't help falling in love</h3>
+Like a river flows surely to the sea<br> 
+Darling so it goes <br>
+some things are meant to be <br>
+take my hand, take my whole life too <br>
+for I can't help falling in love with you <br>
+for I can't help falling in love with you<br>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<h3 id="it">It's now or never</h3>
+It's now or never, Come hold me tight<br>
+Kiss me my darling, Be mine tonight<br>
+Tomorrow will be too late,<br>
+It's now or never. My love won't wait.<br>
+
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<!--
+# 페이지의 특정위치로 이동 
+1. href="외부페이지#아이디" 로 처리하면 특정한 페이지의 특정 위치로 이동한다. 
+
+ -->
+ <h3>외부페이지이동</h3>
+ <hr>
+ <ul>
+ 	<li><a href="a15_link.html#love">Love me tender(외부페이지 특정위치 이동)</a>	
+ 	<li><a href="a15_link.html#can">Can't help falling in love(외부페이지 특정위치이동)</a>	
+ 	<li><a href="a15_link.html#it">It's now or never(외부페이지 특정위치이동)</a>	
+ </ul>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

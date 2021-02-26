@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+//
+
+</script>
+</head>
+<body>
+<!-- document.body.innerHTML: 호출해서 확인할 수도, 수정할 수도 있다.  
+	 css에서 사용하는 선택자를 이용해서 DOM객체를 동적으로 값을 변경할 수 있다. 
+	 document.querySelector("선택자"): 하나일때 
+	 ex) document.querySelector("h1").innerHTML="안녕";
+	 document.querySelectorAll("선택자"): 여러개일때 
+	 ex) document.querySelectorAll("input[type=text][0].value="himan";
+	 ex) document.querySelectorAll("input[type=text][1].value="7777";
+ -->
+   <h2></h2>
+</body>
+<script type="text/javascript">
+/* 
+
+[js]
+[하] 1. if문, if else문,switch문, for문/while 기본형식
+	 if(boolean) {조건문;}
+	 else if(boolean){조건문;}
+	 else {조건문;}
+	 switch(데이터){
+	 case 데이터1일때 :
+	 	처리할 내용 break;
+	 case 데이터2 :
+	 	처리할 내용 break; 
+	 default : 처리할내용;
+	 
+	 }
+ 	 for(초기값;반복조건;증감연산자){반복할문장;}
+ 	 **********************************
+ 	 for(단위객체: 배열)(X-js에 없음)
+ 	 for(var 인덱스할당변수 in 배열){
+ 		 배열[인덱스할당변수]
+ 	 }
+ 	 for(var 속성할당변수 in 객체){
+ 		 객체[속성할당변수] : 속성과 할당 속성값까지 확인 
+ 	 }
+ 	 배열명.forEach(function(단위객체,index변수,배열){
+ 		 
+ 	 })
+	 while(조건식){실행할문장}	do{실행할문장}while(조건식); 
+[하] 3 * 3 테이블을 생성해보세요 
+*/
+	/* var show ="";
+	show+="<table border><tr>";
+	for(var i=1;i<=3*3;i++){
+		if(i%3==0){
+			show+="<td>"+i+"</td></tr><tr>"
+		}else{
+			show+="<td>"+i+"</td>"
+		}
+	}
+	show+="</tr></table>"
+	document.body.innerHTML+=show; */
+	// document.body.innerHTML: 현재 body에 태그로 처리할 내용을 할당.
+	// 호출 처리 
+	// 만들어진 html 태그 코드를 body에 동적으로 저장 처리 
+/*
+[중] 행과 열의 값을 받아서 테이블을 생성해보세요! 
+	특정한 셀(td))은 배경색을 노랑색(3단계)
+*/
+	var col=prompt("col 수를 입력하세요","1");
+	var row=prompt("row 수를 입력하세요","1");
+	var trcolor = parseInt(Math.random()*col*row)+1;
+	var show ="";
+	show+="<table border>";
+	show+="<tr>";
+	for(var i=1;i<=col*row;i++){
+		if(i%col==0){
+			if(i==trcolor){
+				show+="<td  bgcolor='yellow'>"+i+"</td></tr><tr>"
+			}else{show+="<td>"+i+"</td></tr><tr>"}
+			
+		}else{
+			if(i==trcolor){
+				show+="<td bgcolor='yellow'>"+i+"</td>"
+			}else{show+="<td>"+i+"</td>"}
+		}
+	}
+	show+="</tr></table>"
+	document.body.innerHTML+=show; 
+
+	//0.0 <= Math.random() <1.0
+	//(int)(Math.random()*경우의수 + 시작번호)- java 
+	//(parseInt)(Math.random()*경우의수+시작번호)- js
+	//Math.floor(Math.random()*경우의수+시작번호) -js 
+	
+	var show2="<table width='33%' border>";
+	var col2= prompt("열의 값을 입력하세요","1");
+	var row2= prompt("행의 값을 입력하세요","1");
+	var tot=col2*row2;
+	var ranCell = parseInt(Math.random()*tot+1);
+	// style='background-color:yellow;'
+	var cnt=1;
+	for(var rowCnt=1;rowCnt<=row2;rowCnt++){
+		show2+="<tr>";
+		for(var colCnt=1;colCnt<=col2;colCnt++){
+			if(ranCell==cnt){
+				show2+="<td style='background-color:yellow;'>";
+			}else{
+				show2+="<td>";
+			}
+			show2+=(cnt++)+"</td>";
+		}
+		show2+="</tr>";
+	}
+	show2+="</table>";
+	document.body.innerHTML+=show2;
+	
+	
+	
+	
+	
+	
+</script>

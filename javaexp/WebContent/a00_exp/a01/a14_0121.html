@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/* 
+ 
+*/
+//	
+	var tot=0;
+	function plus(obj){
+		tot+= parseInt(obj);
+		document.querySelector("h4").innerHTML=tot;
+	}
+	
+	var tot2=0;
+	function calTot(num){
+		tot2+= Number(num);
+		var totObj = document.querySelector("#tot");
+		totObj.innerHTML="총계: "+tot2;
+	}
+	
+	var no =1; 
+	function gugudan(){
+		var set = setInterval(function(){
+		var show="";
+		var ran1 = parseInt(Math.random()*8+2);
+		var ran2 = parseInt(Math.random()*8+2);
+		var here = document.querySelector("h2");
+		show += ran1+"X"+ran2+"= <input size='2' type='text'><br>";		
+		here.innerHTML+=show;
+		if(no>10){
+			clearInterval(set);
+			alert("종료!");
+			here.innerHTML="종료/다시하시겠습니까?";
+			no=1;
+		}
+		no++;
+		},1000);
+	}
+</script>
+</head>
+<body>
+   <h2 onclick="gugudan()">시작<br></h2>
+   <table border>
+   <!--  this.innerHTML : 매개변수로 현재 td의 레이블내용을 넘겨준다.  -->
+   	<tr><td onclick="plus(this.innerHTML)">1</td><td onclick="plus(this.innerHTML)">2</td><td onclick="plus(this.innerHTML)">3</td></tr>
+   	<tr><td onclick="plus(this.innerHTML)">4</td><td onclick="plus(this.innerHTML)">5</td><td onclick="plus(this.innerHTML)">6</td></tr>
+   	<tr><td onclick="plus(this.innerHTML)">7</td><td onclick="plus(this.innerHTML)">8</td><td onclick="plus(this.innerHTML)">9</td></tr>
+   </table>
+   <h4></h4>
+   
+   <table border id="tab"></table>
+   <h4 id="tot"></h4>
+</body>
+<script type="text/javascript">
+/* 
+ [js]
+[하] 1. 함수의 기본형식과 호출방법을 기술하세요.
+
+//선언적 함수 선언 
+function call01(obj){
+	alert("선언적 함수 호출");
+	if(obj!=null)
+	obj.style.backgroundColor="pink";
+}
+// 선언적 함수 호출 
+<h2 onclick="call01(this)">함수호출</h2>
+// 익명함수 선언 
+	var plus = function(num01,num02){
+		console.log("#합산처리#");
+		return num01+num02; 
+	}
+// 익명함수 호출 
+	console.log("결과값: "+plus(30,40));
+
+[하] 2. 1~9숫자 3X3테이블에 해당 셀을 클릭시, 하단 h4 에 클릭시마다,
+       합산한 결과가 출력되게 함수를 정의하고 처리하세요.
+       예를 들어 1, 3 클릭시 4 출력
+*/
+var tabObj = document.querySelector("#tab");
+var addHtml = "";
+for(var cnt=1; cnt<=25; cnt++){
+	if(cnt%5==1) addHtml+="<tr>";
+	addHtml+="<td onclick='calTot(this.innerHTML)'>"+cnt+"</td>";
+	if(cnt%5==0) addHtml+="</tr>";
+}
+tabObj.innerHTML=addHtml;
+
+
+	
+/*
+[하] 3. setTimeout, clearTimeout의 기본 생성 코드, 자원해제 코드를 기술하세요.
+		setTimeout(function(){ 시간 뒤에 처리할 내용},1/1000시간 );
+		var set = setTimeout();
+		// 자원해제
+		clearTimeout(set);
+[중] 4. 시작버튼 클릭시, h2 화면에 구구단 임의의 문제가 출력되고, 10문제 출력시, 끝나게
+        하세요.
+	
+*/
+//
+
+</script>
+
+
+
+
+

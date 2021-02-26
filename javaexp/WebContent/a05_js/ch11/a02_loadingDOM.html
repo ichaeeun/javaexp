@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/* 
+ window : 화면창 기준 
+ window.document.body.innerHTML ="출력내용";
+ window.document.write("출력내용")
+ 
+*/
+//
+window.onload=function(){ 
+ 	// document.querySelector("h2").innerHTML="";
+ 	// 변수를 선언합니다. 
+ 	var child = window.open('','','width=300, height=200');
+ 	// 출력합니다. 
+ 	if(child){
+ 		child.document.write('<h1>From Parenet Window</h1>');
+ 	}else{
+ 		alert('팝업 차단을 해제해주세요');
+ 	}
+ 	// ex) 버튼을 열려라!창문!! 클릭했을 때, 창이 열리면서 
+ 	// 		어서오세요 라는 메시지의 window창이 열리게 하세요 
+ 	var button = document.querySelector("[name=button]");
+ 	button.onclick=function(){
+ 		var child2 = window.open('','','width=400,height=200');
+ 		if(child2){
+ 			// 특정한 윈도우창(BOM)의 출력내용을 처리 
+ 			child2.document.write('<h2>어서오세요</h2>');
+ 		}else{
+ 			alert('팝업차단을 해제해주세요');
+ 		}
+ 	}
+}; 
+
+</script>
+</head>
+<body>
+   <h2></h2>
+   <input type="button" name="button" value="열려라!창문!!">
+</body>
